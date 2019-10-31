@@ -7,6 +7,8 @@ package hacs;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Expression;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
@@ -17,82 +19,71 @@ class TestAssignment
 {
 	Assignment assign1 = null;
 	Date duedate = new Date(); 
-
+	Solution sObj = null;
+	ReminderVisitor rObj = null;
 	@BeforeEach
 	void setUp() throws Exception {
-		assign1 = new Assignment();
+		assign1 = new Assignment("Assignment 1");
+		sObj = new Solution();
+		rObj = new ReminderVisitor();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		assign1 = null;
+		sObj = null;
+		rObj = null;
 	}
 
-	@Test
-	void testSetDueDate() {
-		assign1.setDueDate(duedate);
-		//System.out.println(assign1.getDueDateString());
-		assertTrue (assign1.getDueDateString().equals("10/30/19"));
-	}
+//	@Test
+//	void testSetDueDate() {
+//		assign1.setDueDate(duedate);
+//		//System.out.println(assign1.getDueDateString());
+//		assertTrue (assign1.getDueDateString().equals("10/31/19"));
+//	}
+
 
 	@Test
-	void testSetAssSpec() {
-		fail("Not yet implemented"); // TODO
+	void testIsOverDueIf() {
+		//when 
+		assertTrue(!assign1.isOverDue());
 	}
-
+	
 	@Test
-	void testIsOverDue() {
-		fail("Not yet implemented"); // TODO
+	void testIsOverDueElse() {
+		assertFalse(assign1.isOverDue());
+		
 	}
 
 	@Test
 	void testAddSolution() {
-		fail("Not yet implemented"); // TODO
+		try{
+	        Solution myReturnedObject = assign1.addSolution();
+	        assertNotNull(myReturnedObject);//check if the object is != null
+	        //checks if the returned object is of class Expression
+	        assertTrue(myReturnedObject instanceof Solution);
+	    }catch(Exception e){
+	        // let the test fail, if your function throws an Exception.
+	        fail("got Exception, i want an Expression");
+	     }
 	}
 
 	@Test
 	void testAddSolutionSolution() {
-		fail("Not yet implemented"); // TODO
+		assign1.addSolution(sObj);
+		assertTrue(assign1.getSolutionList().size()>0);
 	}
 
-	@Test
-	void testSubmitSolution() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGetSolutionList() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGetSolution() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGetSugSolution() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGetSolutionIterator() {
-		fail("Not yet implemented"); // TODO
-	}
 
 	@Test
 	void testToString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGetDueDateString() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(assign1.toString().equals("Assignment 1"));
 	}
 
 	@Test
 	void testAccept() {
-		fail("Not yet implemented"); // TODO
+		assign1.accept(rObj);
+		assertTrue(rObj.m_Reminder.getSize() > 1);
 	}
 
 }

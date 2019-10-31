@@ -21,9 +21,13 @@ public class Assignment {
   protected SolutionList theSolutionList=new SolutionList();
   protected Solution SuggestSolution=new Solution();
 
-
+  
 
   public Assignment() {
+  }
+  
+  public Assignment(String name) {
+	  AssName = name;
   }
 
   public void setDueDate(Date theDueDate){
@@ -59,7 +63,8 @@ public class Assignment {
   public void submitSolution(){
   }
 
-  public void getSolutionList(){
+  public SolutionList getSolutionList(){
+	  return theSolutionList;
   }
 
   /* return the solution of the give name

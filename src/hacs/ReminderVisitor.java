@@ -23,7 +23,7 @@ import java.util.*;
 
 public class ReminderVisitor extends NodeVisitor {
 
-	Reminder m_Reminder;
+	public Reminder m_Reminder;
 
 	public ReminderVisitor() {
 	}
