@@ -10,10 +10,18 @@ import java.util.ArrayList;
  * @author mjfindler
  * @version 2.0
  * 
+ * @author amitpandey
+ * @version 3.0
+ * 
  *          Update to Java 8
  */
 
 public class SolutionList extends ArrayList<Solution> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public SolutionList() {
 	}

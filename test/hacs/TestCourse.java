@@ -1,5 +1,5 @@
 /**
- * 
+ * @author amitpandey
  */
 package hacs;
 
@@ -11,10 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * @author amitpandey
- *
- */
+
 class TestCourse {
 
 	Course english = null;
@@ -49,5 +46,12 @@ class TestCourse {
 		
 		assertTrue(true);
 	}
-
+	
+	void testtoString() {
+		
+	}
+	
+	void testaccept(){
+		
+	}
 }

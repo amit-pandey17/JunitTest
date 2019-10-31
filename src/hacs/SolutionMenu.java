@@ -25,7 +25,6 @@ public class SolutionMenu extends JDialog {
 	}
 
 	void ShowMenu(Solution theSolution) {
-		show();
 	}
 	
 }
