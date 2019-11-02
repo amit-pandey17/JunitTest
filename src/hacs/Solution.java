@@ -19,7 +19,7 @@ public class Solution {
 	String theAuthor = "";
 	String SolutionFileName = "";
 	Date theSubmitData = new Date();
-	int theGrade;
+	public int theGrade;
 	boolean reported = false;
 
 	public Solution() {

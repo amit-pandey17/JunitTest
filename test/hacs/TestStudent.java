@@ -35,48 +35,5 @@ public class TestStudent {
 		assertEquals(null, stud.createCourseMenu(cse880, 1));
 	}
 
-//
-//	@Test
-//	void testCreateCourseMenu1() {
-//}
-//
-//	@Test
-//	void testShowAddButton() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testShowViewButtons() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testShowComboxes() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testShowRadios() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testShow() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testIfLogout() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testGetCourseList() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	void testAddCourse() {
-//		fail("Not yet implemented"); // TODO
 }
 
