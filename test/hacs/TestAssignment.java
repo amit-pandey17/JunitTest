@@ -4,18 +4,16 @@ package hacs;
  * @author amitpandey
  *
  */
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.beans.Expression;
-import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TestAssignment 
+public class TestAssignment 
 {
 	Assignment assign1 = null;
 	Date duedate = new Date(); 

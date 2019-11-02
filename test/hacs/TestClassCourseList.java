@@ -1,16 +1,12 @@
 package hacs;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 
-class TestClassCourseList {
+public class TestClassCourseList {
 	
 	ClassCourseList ccl = null;
 
