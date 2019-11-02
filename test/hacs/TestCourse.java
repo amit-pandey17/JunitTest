@@ -14,17 +14,18 @@ import org.junit.jupiter.api.Test;
 
 class TestCourse {
 
-	Course english = null;
-	Course calc1 = null;
+	Course cse870 = null;
+	Course cse880 = null;
+	Assignment ass1= null;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		english = new Course("English" , 0);
-		calc1 = new Course("Calc1" , 1);
-		
+		cse870 = new Course("CSE870" , 0);
+		cse880 = new Course("CSE880" , 1);
+		ass1 = new Assignment("Homework 1");
 	}
 	
 
@@ -33,9 +34,9 @@ class TestCourse {
 	 */
 	@AfterEach
 	void tearDown() throws Exception {
-		english = null;
-		calc1 = null;
-
+		cse870 = null;
+		cse880 = null;
+		ass1= null;
 	}
 
 	/**
@@ -43,15 +44,12 @@ class TestCourse {
 	 */
 	@Test
 	void testAddAssignment1() {
-		
-		assertTrue(true);
+		cse870.addAssignment(ass1);
+		assertTrue(cse870.assignmentList.size()==1);
 	}
 	
 	void testtoString() {
-		
+		assertTrue(cse870.toString().equals("CSE870"));
 	}
 	
-	void testaccept(){
-		
-	}
 }

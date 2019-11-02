@@ -43,31 +43,35 @@ class TestAssignment
 //	}
 
 
-	@Test
-	void testIsOverDueIf() {
-		//when 
-		assertTrue(!assign1.isOverDue());
-	}
-	
-	@Test
-	void testIsOverDueElse() {
-		assertFalse(assign1.isOverDue());
-		
-	}
-
+//	@Test
+//	void testIsOverDueIf() {
+//		//when 
+//		assertTrue(assign1.isOverDue());
+//	}
+//	
+//	@Test
+//	void testIsOverDueElse() {
+//		assertFalse(assign1.isOverDue());
+//	}
+//
 	@Test
 	void testAddSolution() {
 		try{
-	        Solution myReturnedObject = assign1.addSolution();
-	        assertNotNull(myReturnedObject);//check if the object is != null
-	        //checks if the returned object is of class Expression
-	        assertTrue(myReturnedObject instanceof Solution);
+			Solution soln = assign1.addSolution();
+			//If addSolution returns an empty object then its values should be same as sObj after
+			//initialization
+			assertTrue(sObj.theAuthor.equals(soln.theAuthor),"addSolution passed!");
+			assertTrue(sObj.SolutionFileName.equals(soln.SolutionFileName),"Equal");
+			assertTrue(sObj.theGrade == soln.theGrade, "Also equals");
+			assertTrue(sObj.reported == soln.reported, "Also also equals");
+//			assertTrue(sObj.theSubmitData == soln.theSubmitData,"Also equals");
+			
 	    }catch(Exception e){
 	        // let the test fail, if your function throws an Exception.
 	        fail("got Exception, i want an Expression");
 	     }
 	}
-
+	
 	@Test
 	void testAddSolutionSolution() {
 		assign1.addSolution(sObj);
@@ -78,12 +82,6 @@ class TestAssignment
 	@Test
 	void testToString() {
 		assertTrue(assign1.toString().equals("Assignment 1"));
-	}
-
-	@Test
-	void testAccept() {
-		assign1.accept(rObj);
-		assertTrue(rObj.m_Reminder.getSize() > 1);
 	}
 
 }

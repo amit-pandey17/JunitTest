@@ -22,7 +22,8 @@ public class ClassCourseList extends ArrayList<Course> {
 		try {
 			BufferedReader file;
 			String strCourseName = null;
-			file = new BufferedReader(new FileReader("CourseInfo.txt"));
+			file = new BufferedReader(new FileReader(theFileName));
+			System.out.println(file);
 			while ((strCourseName = file.readLine()) != null) {
 				Course theCourse;
 				theCourse = new Course(strCourseName, 0);
@@ -39,8 +40,13 @@ public class ClassCourseList extends ArrayList<Course> {
 		for (int i = 0; i < nCourseCount; i++) {
 			Course theCourse;
 			theCourse = (Course) get(i);
-			if (theCourse.CourseName.compareTo(CourseName) == 0)
+			if (theCourse.CourseName.compareTo(CourseName) == 0) 
+			{
+				System.out.println("in if");
 				return theCourse;
+				}
+			else
+				System.out.println("in else");
 		}
 		return null;
 	}

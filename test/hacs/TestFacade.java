@@ -7,73 +7,76 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestFacade {
-
+	
+	Facade f = null;
+	UserInfoItem us= null;
+	UserInfoItem ui = null;
+	Person studentpepe = null;
 	@BeforeEach
 	void setUp() throws Exception {
+		f = new Facade();
+		us = new UserInfoItem();
+		us.strUserName = "pepe";
+		us.UserType = UserInfoItem.USER_TYPE.Student;
+		
+		ui = new UserInfoItem();
+		ui.strUserName = "Inst1";
+		ui.UserType = UserInfoItem.USER_TYPE.Instructor;
+		
+		Person studentpepe = new Student();
+		studentpepe.UserName = "pepe";
+		studentpepe.type = 0;
+		f.thePerson = studentpepe;
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		f = null;
+		ui= null;
+		us= null;
+		studentpepe = null;
+
 	}
 
-	@Test
-	void testLogin() {
-		fail("Not yet implemented"); // TODO
-	}
+//	@Test
+//	void testReportSolutions() {
+//		fail("Not yet implemented"); // TODO
+//	}
+//
+//	@Test
+//	void testSubmitSolution() {
+//		fail("Not yet implemented"); // TODO
+//	}
+//
+//	@Test
+//	void testRemind() {
+//		fail("Not yet implemented"); // TODO
+//	}
 
 	@Test
-	void testAddAssignment() {
-		fail("Not yet implemented"); // TODO
+	void testCreateUser1() {
+		f.createUser(ui);
+		assertTrue(f.thePerson instanceof Instructor); 
+	}
+	
+	@Test
+	void testCreateUser2() {
+		f.createUser(us);
+		assertTrue(f.thePerson instanceof Student); 
 	}
 
-	@Test
-	void testViewAssignment() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testGradeSolution() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testReportSolutions() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testSubmitSolution() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testRemind() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testCreateUser() {
-		fail("Not yet implemented"); // TODO
-	}
 
 	@Test
 	void testCreateCourseList() {
-		fail("Not yet implemented"); // TODO
+		f.createCourseList();
+		assertFalse(f.theCourseList.isEmpty());
 	}
 
 	@Test
 	void testAttachCourseToUser() {
-		fail("Not yet implemented"); // TODO
+		f.createCourseList();
+		f.attachCourseToUser();
+        assertFalse(f.thePerson.CourseList.isEmpty());
 	}
-
-	@Test
-	void testSelectCourse() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	void testCourseOperation() {
-		fail("Not yet implemented"); // TODO
-	}
-
 }
+

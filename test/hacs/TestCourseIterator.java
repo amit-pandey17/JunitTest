@@ -7,10 +7,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestCourseIterator {
+	
+	CourseIterator ci= null;
 
 	@BeforeEach
 	void setUp() throws Exception {
-	}
+			}
 
 	@AfterEach
 	void tearDown() throws Exception {

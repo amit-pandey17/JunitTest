@@ -18,7 +18,7 @@ public class Facade {
 	private Course theSelecteCourse = null;
 	private int nCourseLevel = 0;
 	ClassCourseList theCourseList;
-	Person thePerson;
+	public Person thePerson;
 
 	public Facade() {
 	}
@@ -149,8 +149,9 @@ public class Facade {
 					}
 				}
 			}
-		} catch (Exception ee) {
-			;
+		} catch (Exception ee) 
+		{
+			ee.printStackTrace();
 		}
 	}
 
